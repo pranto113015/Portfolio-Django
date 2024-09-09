@@ -1,12 +1,14 @@
 from django.shortcuts import render
 
 # This is manual import file for take input backend
-from .models import About, Feature, Testimonial, Social
-
+from .models import About  
+from .models import Social  
+from .models import Feature
+from .models import Testimonial
+from .models import Service
 
 
 # Create your views here.
-
 
 # index/home section function
 def index(request):
@@ -29,9 +31,14 @@ def about(request):
 def resume(request):
     return render(request, 'resume.html')
 
-
+# service section function
 def services(request):
-    return render(request, 'services.html')
+    services=Service.objects.all()
+    return render(request, 'services.html',{'services':services})
+
+def service_details(request):
+    return render(request, 'service_details.html')
+
 
 
 def portfolio(request):

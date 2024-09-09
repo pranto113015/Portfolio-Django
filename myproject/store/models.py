@@ -37,4 +37,12 @@ class Social(models.Model):
    def __str__(self):
     return self.social_icon
 
+class Service(models.Model):
+    s_icon=models.CharField(max_length=100)
+    s_title=models.CharField(max_length=100)
+    s_description=models.CharField(max_length=500)
+
+    def __str__(self):
+      return self.s_icon
+     
 
