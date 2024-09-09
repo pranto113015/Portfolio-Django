@@ -17,15 +17,6 @@ class About(models.Model):
 
 
 
-
-
-
-
-
-
-
-
-
 class Feature(models.Model):
     icon = models.CharField(max_length=100)
     interested_title = models.CharField(max_length=50)
@@ -36,5 +27,14 @@ class Testimonial(models.Model):
     name = models.CharField(max_length=80)
     t_designation = models.CharField(max_length=100)
     
+
+
+class Social(models.Model):
+   social_icon=models.CharField(max_length=100)
+   link=models.URLField(max_length=1000)
+
+
+   def __str__(self):
+    return self.social_icon
 
 

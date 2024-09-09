@@ -1,16 +1,17 @@
 from django.shortcuts import render
 
 # This is manual import file for take input backend
-from .models import About 
-from .models import Feature
-from .models import Testimonial
+from .models import About, Feature, Testimonial, Social
+
 
 
 # Create your views here.
 
 
+# index/home section function
 def index(request):
-    return render(request, 'index.html')
+    social= Social.objects.all()
+    return render(request, 'index.html',{'social':social})
 
 
 
