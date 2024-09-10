@@ -10,7 +10,7 @@ class About(models.Model):
     website_link = models.URLField(max_length=300)
     phone = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
-    age = models.IntegerField(max_length=10)
+    age = models.PositiveIntegerField()
     degree = models.CharField(max_length=100)
     email = models.EmailField()
     bottom_short_discription = models.CharField(max_length=200)
@@ -26,7 +26,10 @@ class Testimonial(models.Model):
     t_discription = models.CharField(max_length=250)
     name = models.CharField(max_length=80)
     t_designation = models.CharField(max_length=100)
+    image= models.ImageField(upload_to='static/assets/img/testimonials/', default='#')
     
+    def __str__(self):
+     return self.name
 
 
 class Social(models.Model):
