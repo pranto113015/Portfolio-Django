@@ -293,8 +293,8 @@
           <!-- this section is dynamilc in backend server -->
           {% for a in feature %}
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="features-item">
-              <i class="{{ a.icon }}" style="color: #ffbb2c;"></i>
+            <div class="features-item" >
+              <i class="{{ a.icon }}"  style="color: {{ a.icon_color }}"></i>
               <h3><a href="" class="stretched-link">{{ a.interested_title }}</a></h3>
             </div>
           </div>
@@ -358,13 +358,13 @@
 
             {% for d in testimonial %}
             <div class="swiper-slide">
-              <div class="testimonial-item" "="">
+              <div class="testimonial-item">
             <p>
               <i class=" bi bi-quote quote-icon-left"></i>
                 <span>{{ d.t_discription }}</span>
                 <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src= "{{ d.image.url }}" class="testimonial-img" alt="pic">
+                <img src= "{{ d.image.url }}" class="testimonial-img" alt="pofile">
                 <h3>{{ d.name }}</h3>
                 <h4>{{ d.t_designation }}</h4>
               </div>
@@ -386,7 +386,7 @@
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Personal</h3>
+      <h3 class="sitename"><img src="{% static './assets/img/pk-logo.png' %}" alt="logo"></h3>
       <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -397,7 +397,7 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Pk.</strong> <span>All Rights Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->

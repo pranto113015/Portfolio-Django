@@ -15,21 +15,37 @@ class About(models.Model):
     email = models.EmailField()
     bottom_short_discription = models.CharField(max_length=200)
 
+    def __str__(self):
+     return self.designation
+
+
+
 
 
 class Feature(models.Model):
     icon = models.CharField(max_length=100)
+    icon_color=models.CharField(max_length=100,default='#fff')
     interested_title = models.CharField(max_length=50)
+
+
+    def __str__(self):
+     return self.interested_title
+
+
+
 
 
 class Testimonial(models.Model):
     t_discription = models.CharField(max_length=250)
     name = models.CharField(max_length=80)
     t_designation = models.CharField(max_length=100)
-    image= models.ImageField(upload_to='static/assets/img/testimonials/', default='#')
+    image= models.ImageField(upload_to='testimonials_img/', default='#')
     
     def __str__(self):
      return self.name
+
+
+
 
 
 class Social(models.Model):
@@ -39,6 +55,10 @@ class Social(models.Model):
 
    def __str__(self):
     return self.social_icon
+
+
+
+
 
 class Service(models.Model):
     s_icon=models.CharField(max_length=100)
