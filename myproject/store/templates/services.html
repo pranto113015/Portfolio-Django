@@ -118,10 +118,10 @@
               <div class="icon">
                 <i class="{{ r.s_icon }}"></i>
               </div>
-              <a href="{% url 'service_details' %}" class="stretched-link">
+              <a href="{% url 'service_details' r.pk %}" class="stretched-link">
                 <h3>{{ r.s_title }}</h3>
               </a>
-              <p>{{ r.s_description }}</p>
+              {% comment %} <p>{{ r.s_description }}</p> {% endcomment %}
             </div>
           </div><!-- End Service Item -->
           {% endfor %}

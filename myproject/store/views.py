@@ -36,8 +36,11 @@ def services(request):
     services=Service.objects.all()
     return render(request, 'services.html',{'services':services})
 
-def service_details(request):
-    return render(request, 'service_details.html')
+
+# image passing from service to service details usign pk=primary key
+def service_details(request,pk): 
+    service_details=Service.objects.get(pk=pk)
+    return render(request, 'service_details.html',{'service_details':service_details})
 
 
 

@@ -7,5 +7,6 @@ urlpatterns = [
     path('services/', services, name='services'),
     path('portfolio/', portfolio, name='portfolio'),
     path('contact/', contact, name='contact'),
-    path('services/service_details/', service_details, name='service_details'),
+    # <int:pk>/ this is use for primary key pass
+    path('services/service_details/<int:pk>/', service_details, name='service_details'),
 ]
