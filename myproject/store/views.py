@@ -1,11 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # This is manual import file for take input backend
-from .models import About  
-from .models import Social  
-from .models import Feature
-from .models import Testimonial
-from .models import Service
+from .models import *
+from .forms import ContactForm
 
 
 # Create your views here.
@@ -48,5 +45,14 @@ def portfolio(request):
     return render(request, 'portfolio.html')
 
 
+
+
 def contact(request):
-    return render(request, 'contact.html')
+    form = ContactForm(request.POST)
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    
+    return render(request, "contact.html", {'form':form})

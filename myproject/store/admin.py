@@ -4,6 +4,7 @@ from .models import Feature
 from .models import Testimonial
 from .models import Social
 from .models import Service
+from .models import Contact
 
 
 
@@ -13,3 +14,4 @@ admin.site.register(Feature)
 admin.site.register(Testimonial)
 admin.site.register(Social)
 admin.site.register(Service)
+admin.site.register(Contact)
